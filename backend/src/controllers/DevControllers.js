@@ -42,6 +42,14 @@ module.exports = {
         }
             
         return response.json(dev);
+    },
+
+    async update() {
+        // nome, avatar, bio, localicação, techs
+    },
+
+    async destroy() {
+
     }
 
 };
