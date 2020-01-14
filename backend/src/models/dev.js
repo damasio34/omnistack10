@@ -1,8 +1,8 @@
 // Importação de bibliotecas
 const mongoose = require('mongoose');
-const pointSchema =  require('./utils/pointSchema');
+const pointSchema =  require('./utils/PointSchema');
 
-const devSchema = new mongoose.Schema({
+const DevSchema = new mongoose.Schema({
     name: String,
     github_username: String,
     bio: String,
@@ -14,4 +14,4 @@ const devSchema = new mongoose.Schema({
     } 
 });
 
-module.exports = mongoose.model('dev', devSchema);
+module.exports = mongoose.model('dev', DevSchema);
