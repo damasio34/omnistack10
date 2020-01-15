@@ -1,23 +1,58 @@
-// useState: função do react para alteração de estado
-import React, { useState } from 'react';
+import React from 'react';
 
-// Componente: Um bloco isolado de HTML, CSS e JS, o qual não interfere no restante da aplicação;
-// Propriedade: São parâmetros de um componente;
-// Estado: Informações mantidas pelo componente (lembrar de imutabilidade);
+import './global.css';
+import './app.css';
+import './sidebar.css';
+import './main.css';
 
 function App() {
-    const [counter, setCounter] = useState(0);
 
-    function incrementCounter() {
-        setCounter(counter + 1);
-    }
+    
 
     return (
-        // Fragment: É uma tag sem informação, utilizada apenas para marcação, ex: <></>
-        <>
-            <h1>Contador: {counter}</h1>
-            <button onClick={incrementCounter}>Incrementar</button>
-        </>
+        <div id="app">
+            <aside>
+                <strong>Cadastrar</strong>
+                <form>
+                    <div className="input-block">
+                        <label htmlFor="github_username">Usuário do github</label>
+                        <input name="github_username" id="github_username" required />
+                    </div>
+
+                    <div className="input-block">
+                        <label htmlFor="techs">Tecnologias</label>
+                        <input name="techs" id="techs" required />
+                    </div>
+
+                    <div className="input-group">
+                        <div className="input-block">
+                            <label htmlFor="latitude">Latitude</label>
+                            <input name="latitude" id="latitude" required />
+                        </div>
+                        <div className="input-block">
+                            <label htmlFor="longitude">Longitude</label>
+                            <input name="longitude" id="longitude" required />
+                        </div>
+                    </div>
+                    <button type="submit">Salvar</button>
+                </form>
+            </aside>
+            <main>
+                <ul>
+                    <li className="dev-item">
+                        <header>
+                            <img src="" />
+                            <div className="user-info">
+                                <strong></strong>
+                                <span></span>
+                            </div>
+                        </header>
+                        <p></p>
+                        <a href=""></a>
+                    </li>
+                </ul>
+            </main>
+        </div>
     );
 }
 
