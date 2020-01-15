@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+// Componente: Um bloco isolado de HTML, CSS e JS, o qual não interfere no restante da aplicação
+// Propriedade: São parâmetros de um componente
+// Estado: 
+
+import Header from './Header';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        // Fragment: É uma tag sem informação, utilizada apenas para marcação, ex: <></>
+        <>
+            <Header title="Dashboard"></Header>
+            <Header title="Titulo 2"></Header>
+            <Header title="Titulo 4"></Header>
+        </>
+    );
 }
 
 export default App;
