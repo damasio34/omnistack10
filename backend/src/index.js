@@ -1,6 +1,7 @@
 // Importação de bibliotecas
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const routes = require('./routes');
 
 // Declaração de constantes
@@ -12,6 +13,9 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-30lsp.mongodb.net/w
     useUnifiedTopology: true
 });
 // `use` significa que será válido ara todas as rotas da aplicação
+
+// Habilitando acesso de outros clientes à API.
+app.use(cors({ origin: 'http://localhost:3000' }));
 // Habilitando o formato json
 app.use(express.json());
 // Importando as rotas do arquivo routes.js
