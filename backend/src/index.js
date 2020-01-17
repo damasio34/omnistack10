@@ -15,7 +15,9 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-30lsp.mongodb.net/w
 // `use` significa que será válido ara todas as rotas da aplicação
 
 // Habilitando acesso de outros clientes à API.
-app.use(cors({ origin: 'http://localhost:3000' }));
+//app.use(cors({ origin: 'http://localhost:3000' }));
+// Todos
+app.use(cors({ }));
 // Habilitando o formato json
 app.use(express.json());
 // Importando as rotas do arquivo routes.js
