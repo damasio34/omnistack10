@@ -2,12 +2,18 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const routes = require('./routes');
+const http = require('http');
 
-// Declaração de constantes
+const routes = require('./routes');
+const { setupWebsocket } = require('./websocket');
+
 const app = express();
+const server = http.Server(app);
+
+setupWebsocket(server);
 
 // Conexão com o mongoDB
+mongoose.set('useCreateIndex', true);
 mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-30lsp.mongodb.net/week10?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -23,4 +29,4 @@ app.use(express.json());
 // Importando as rotas do arquivo routes.js
 app.use(routes);
 // Porta ao qual o servidor da API será disponibilizado
-app.listen(3333);
+server.listen(3333);
