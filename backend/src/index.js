@@ -13,10 +13,11 @@ const server = http.Server(app);
 setupWebsocket(server);
 
 // Conexão com o mongoDB
-mongoose.set('useCreateIndex', true);
+// mongoose.set('useCreateIndex', true);
 mongoose.connect('mongodb+srv://omnistack:omnistack@cluster0-30lsp.mongodb.net/week10?retryWrites=true&w=majority', {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 // `use` significa que será válido ara todas as rotas da aplicação
 
